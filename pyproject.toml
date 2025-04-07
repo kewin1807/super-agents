@@ -1,0 +1,27 @@
+# pyproject.toml
+[tool.poetry]
+name = "super_agents"
+version = "0.1.0"
+description = "Super Agents using CrewAI and FastAPI"
+authors = ["Kewin1807 <kiemkhachdatinh2@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+crewai = "^0.108.0" # Check for the latest version
+python-dotenv = "^1.0.1"
+pymongo = "^4.6.2" # For MongoDB interaction
+# Optional: Add Gradio if you want the chat interface
+gradio = "^4.25.0"
+pydantic-settings = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0" # For testing
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

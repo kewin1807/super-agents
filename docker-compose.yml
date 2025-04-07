@@ -1,0 +1,41 @@
+# docker-compose.yml
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: super_agents
+    env_file:
+      - .env
+    ports:
+      - "8000:8000" # Map host port 8000 to container port 8000
+    volumes:
+      - ./app:/app/app
+      # If you want to mount the .env file directly (alternative to env_file)
+      # - ./.env:/app/.env
+    depends_on:
+      - mongo # Ensure mongo starts before the app
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:latest # Use the official MongoDB image
+    container_name: mongo_db
+    ports:
+      - "27017:27017" # Map host port 27017 to container port 27017
+    volumes:
+      # Persist MongoDB data using a named volume
+      - mongo_data:/data/db
+    networks:
+      - app-network
+    # You can add environment variables for MongoDB authentication here if needed
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: example
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo_data: # Define the named volume for data persistence
