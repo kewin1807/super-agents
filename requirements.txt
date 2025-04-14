@@ -1,0 +1,4 @@
+autogen-agentchat
+autogen-ext[openai]
+json-schema-to-pydantic==0.2.4
+autogen-ext[magentic-one]
