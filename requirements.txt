@@ -2,3 +2,5 @@ autogen-agentchat
 autogen-ext[openai]
 json-schema-to-pydantic==0.2.4
 autogen-ext[magentic-one]
+google-adk==0.1.0
+streamlit==1.40.2
