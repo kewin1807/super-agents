@@ -147,11 +147,12 @@ class FinancialAnalystAgent:
                 session_id=session_id
             )
             result = {}
-            for key in ["technical_analysis", "sentiment_analysis", "fundamental_analysis"]:
+            keys = ["report"]
+            for key in keys:
                 value = updated_session.state.get(key)
                 result[key] = value
                 print(f"Update session {key}: {value}")
-            return result
+                return result
         except Exception as e:
             logger.exception(f"Error during finance analysis: {str(e)}")
             raise

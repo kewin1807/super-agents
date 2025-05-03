@@ -804,14 +804,14 @@ test-no-images = ["pytest", "pytest-cov", "pytest-rerunfailures", "pytest-xdist"
 
 [[package]]
 name = "crewai"
-version = "0.108.0"
+version = "0.114.0"
 description = "Cutting-edge framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
 optional = false
 python-versions = "<3.13,>=3.10"
 groups = ["main"]
 files = [
-    {file = "crewai-0.108.0-py3-none-any.whl", hash = "sha256:9d3d45efe3cb763f9c0399f3eda743c9f0a8d57101d93161b9c3d70aa4bb71d0"},
-    {file = "crewai-0.108.0.tar.gz", hash = "sha256:cd7b18f1b1164716bd29fe7562890f101d67d2551258e9ead3c8f4e4027bbe30"},
+    {file = "crewai-0.114.0-py3-none-any.whl", hash = "sha256:590cf6afe7d95ac1d482c4fa9033a29e0a9cb567daae4187f25c1cbb1c20af14"},
+    {file = "crewai-0.114.0.tar.gz", hash = "sha256:b2f79693088088b3c1722abecc39a1535115f468d3ce1aa29dcf56cce3ff2968"},
 ]
 
 [package.dependencies]
@@ -827,9 +827,9 @@ jsonref = ">=1.1.0"
 litellm = "1.60.2"
 openai = ">=1.13.3"
 openpyxl = ">=3.1.5"
-opentelemetry-api = ">=1.22.0"
-opentelemetry-exporter-otlp-proto-http = ">=1.22.0"
-opentelemetry-sdk = ">=1.22.0"
+opentelemetry-api = ">=1.30.0"
+opentelemetry-exporter-otlp-proto-http = ">=1.30.0"
+opentelemetry-sdk = ">=1.30.0"
 pdfplumber = ">=0.11.4"
 pydantic = ">=2.4.2"
 python-dotenv = ">=1.0.0"
@@ -841,6 +841,7 @@ uv = ">=0.4.25"
 
 [package.extras]
 agentops = ["agentops (>=0.3.0)"]
+aisuite = ["aisuite (>=0.1.10)"]
 docling = ["docling (>=2.12.0)"]
 embeddings = ["tiktoken (>=0.7.0,<0.8.0)"]
 fastembed = ["fastembed (>=0.4.1)"]
@@ -848,7 +849,7 @@ mem0 = ["mem0ai (>=0.1.29)"]
 openpyxl = ["openpyxl (>=3.1.5)"]
 pandas = ["pandas (>=2.2.3)"]
 pdfplumber = ["pdfplumber (>=0.11.4)"]
-tools = ["crewai-tools (>=0.37.0)"]
+tools = ["crewai-tools (>=0.40.1,<0.41.0)"]
 
 [[package]]
 name = "cryptography"
@@ -953,6 +954,18 @@ wrapt = ">=1.10,<2"
 
 [package.extras]
 dev = ["PyTest", "PyTest-Cov", "bump2version (<1)", "setuptools ; python_version >= \"3.12\"", "tox"]
+
+[[package]]
+name = "diskcache"
+version = "5.6.3"
+description = "Disk Cache -- Disk and file backed persistent cache."
+optional = false
+python-versions = ">=3"
+groups = ["main"]
+files = [
+    {file = "diskcache-5.6.3-py3-none-any.whl", hash = "sha256:5e31b2d5fbad117cc363ebaf6b689474db18a1f6438bc82358b024abd4c2ca19"},
+    {file = "diskcache-5.6.3.tar.gz", hash = "sha256:2c3a3fa2743d8535d832ec61c2054a1641f41775aa7c556758a109941e33e4fc"},
+]
 
 [[package]]
 name = "distro"
@@ -1437,6 +1450,44 @@ huggingface-hub = ">=0.19.3"
 packaging = "*"
 typing-extensions = ">=4.0,<5.0"
 websockets = ">=10.0,<13.0"
+
+[[package]]
+name = "graph-service"
+version = "1.0.0.7"
+description = "project descriptions here"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "graph_service-1.0.0.7-py3-none-any.whl", hash = "sha256:d34cd38529ff0704b83fa4e8692b4f8fcf1524dce7110f89d4ee33423eeff0bd"},
+]
+
+[[package]]
+name = "graphiti-core"
+version = "0.10.5"
+description = "A temporal graph building library"
+optional = false
+python-versions = "<4,>=3.10"
+groups = ["main"]
+files = [
+    {file = "graphiti_core-0.10.5-py3-none-any.whl", hash = "sha256:73172818ce696c0ab3ece827099522924e61a918d6f80e665927a0724a13d941"},
+    {file = "graphiti_core-0.10.5.tar.gz", hash = "sha256:f118c3d7a504fa2dcd17ca8795c0eed77ad8ff787e35fbe73c94ec059e2ec543"},
+]
+
+[package.dependencies]
+diskcache = ">=5.6.3"
+graph-service = ">=1.0.0.7,<2.0.0.0"
+neo4j = ">=5.23.0"
+numpy = ">=1.0.0"
+openai = ">=1.53.0"
+pydantic = ">=2.8.2"
+python-dotenv = ">=1.0.1"
+tenacity = ">=9.0.0"
+
+[package.extras]
+anthropic = ["anthropic (>=0.49.0)"]
+google-genai = ["google-genai (>=1.8.0)"]
+groq = ["groq (>=0.2.0)"]
 
 [[package]]
 name = "grpcio"
@@ -2649,6 +2700,26 @@ files = [
 
 [package.dependencies]
 typing-extensions = {version = ">=4.1.0", markers = "python_version < \"3.11\""}
+
+[[package]]
+name = "neo4j"
+version = "5.28.1"
+description = "Neo4j Bolt driver for Python"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "neo4j-5.28.1-py3-none-any.whl", hash = "sha256:6755ef9e5f4e14b403aef1138fb6315b120631a0075c138b5ddb2a06b87b09fd"},
+    {file = "neo4j-5.28.1.tar.gz", hash = "sha256:ae8e37a1d895099062c75bc359b2cce62099baac7be768d0eba7180c1298e214"},
+]
+
+[package.dependencies]
+pytz = "*"
+
+[package.extras]
+numpy = ["numpy (>=1.7.0,<3.0.0)"]
+pandas = ["numpy (>=1.7.0,<3.0.0)", "pandas (>=1.1.0,<3.0.0)"]
+pyarrow = ["pyarrow (>=1.0.0)"]
 
 [[package]]
 name = "networkx"
@@ -5402,4 +5473,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.13"
-content-hash = "f5bec6c96aba501c7abda585ee51f21523104d485e972c5d1bedc99f6b222ff4"
+content-hash = "c2e828dc766c4999b967e4dde7664358a92a270467a541e0e0a809074f7a878f"

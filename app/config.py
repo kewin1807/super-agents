@@ -12,6 +12,8 @@ class Settings(BaseSettings):
     mongo_uri: str = os.getenv(
         "MONGO_URI", "mongodb://localhost:27017/mydatabase")
     openai_api_key: str | None = os.getenv("OPENAI_API_KEY")
+    anthropic_api_key: str | None = os.getenv("ANTHROPIC_API_KEY")
+    google_api_key: str | None = os.getenv("GOOGLE_API_KEY")
     # Add other configurations as needed
 
     class Config:
