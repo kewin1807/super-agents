@@ -5,3 +5,6 @@ autogen-ext[magentic-one]
 google-adk==0.1.0
 streamlit==1.40.2
 graphiti-core==0.10.5
+lightrag-hku[api]
+lightrag-hku
+pyvis
