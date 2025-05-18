@@ -130,3 +130,7 @@ cython_debug/
 
 # Docker
 docker-compose.override.yml
+
+data/
+rag_storage
+inputs/
